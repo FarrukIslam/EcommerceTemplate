@@ -1,0 +1,202 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transform($transform: '') {
+    -webkit-transition: $transform;
+    -moz-transition: $transform;
+    -ms-transition: $transform;
+    -o-transition: $transform;
+    transition: $transform;
+}
+
+@mixin cover-bg{
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@mixin appearance {
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+}
+
+@mixin overlay($color, $opacity) {
+    position: relative;
+
+    &:before {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        background: rgba($color, $opacity);
+    }
+}
+
+@mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+//@function calculateRem($size) {
+//    $rem-size: $size / 16px;
+//    @return $rem-size * 1rem;
+//}
+//
+//@mixin font-size($size: 16px) {
+//    font-size: $size;
+//    font-size: calculateRem($size);
+//}
+
+@mixin letter-spacing($letter-track, $font-size) {
+    letter-spacing: $letter-track * $font-size / 1000 + px;
+}
+
+@mixin align-center($type: 'all') {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    // all
+    @if $type == 'all' {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        // horizontal
+    } @else if $type == 'horizontal' {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+
+        // vertical
+    } @else if $type == 'vertical' {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        // vertical
+    } @else if $type == 'bottom' {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+}
+
+@mixin placeholder($color,$font_size, $font_weight) {
+    &::-webkit-input-placeholder {
+        color: $color;
+        font-size: $font_size;
+        font-weight: $font_weight;
+        font-family: 'Karla', sans-serif;
+    }
+    &::-moz-placeholder {
+        color: $color;
+        font-size: $font_size;
+        font-weight: $font_weight;
+        font-family: 'Karla', sans-serif;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+        font-size: $font_size;
+        font-weight: $font_weight;
+        font-family: 'Karla', sans-serif;
+    }
+    &:-moz-placeholder {
+        color: $color;
+        font-size: $font_size;
+        font-weight: $font_weight;
+        font-family: 'Karla', sans-serif;
+    }
+}
+
+/** font calculation **/
+//@function calculateRem($size) {
+//    $rem-size: $size / 16px;
+//    @return $rem-size * 1rem;
+//}
+//
+//@mixin font-size($size: 16px) {
+//    font-size: $size;
+//    font-size: calculateRem($size);
+//}
+
+
+
+@function convert($value, $currentUnit, $convertUnit){
+    @if $currentUnit == px{
+
+        @if $convertUnit == ems{
+            @return $value / 16+em;
+        }
+        @else if $convertUnit == percent{
+            @return percentage($value / 16);
+        }
+        @else if $convertUnit == rem{
+            @return $value / 12+rem;
+        }
+
+    }@else if $currentUnit == ems{
+
+        @if $convertUnit == px{
+            @return $value * 16+px;
+        }
+        @else if $convertUnit == percent{
+            @return percentage($value);
+        }
+        @else if $convertUnit == rem{
+            @return $value / 12+rem;
+        }
+
+    }@else if $currentUnit == percent{
+
+        @if $convertUnit == px{
+            @return $value * 16 / 100+px;
+        }
+        @else if $convertUnit == ems{
+            @return $value / 100+em;
+        }
+        @else if $convertUnit == rem{
+            @return $value / 12+rem;
+        }
+
+    }@else if $currentUnit == pts{
+
+        @if $convertUnit == px{
+            @return $value * 1.3333+px;
+        }
+        @else if $convertUnit == ems{
+            @return $value / 12+em;
+        }
+        @else if $convertUnit == percent{
+            @return percentage($value / 12)
+        }
+        @else if $convertUnit == rem{
+            @return $value / 12+rem;
+        }
+    }
+
+}

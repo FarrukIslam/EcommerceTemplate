@@ -1,0 +1,1 @@
+jQuery(document).ready(function(t){t(".pagescroll").on("click",function(){var o=t(this).attr("href");return t("html, body").animate({scrollTop:t(o).offset().top},500),!1})});

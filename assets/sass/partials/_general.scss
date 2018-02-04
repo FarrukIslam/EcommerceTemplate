@@ -1,0 +1,100 @@
+/* General Style =================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body, div, span, img,
+ol, ul, li, a, p, h1, h2, h3,
+h4, h5, h6, option, legend, label,
+table, th, td, tr, article, aside,
+caption, figure, footer, header,
+mark, nav, section, time, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+table {
+    border-collapse: collapse;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    font-size: 16px;
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+body {
+    margin: 0;
+    overflow-x: hidden;
+    color: $body-color;
+    text-rendering: optimizeLegibility;
+    font-size: convert(12, pts, rem);
+}
+h1 { font-size: convert(32, pts, rem); }
+h2 { font-size: convert(15, pts, rem); }
+h3 { font-size: 18px;  }
+
+p {
+    margin: 0 0 30px;
+}
+a {
+    text-decoration: none;
+    color: $body-color;
+    &:hover, &:focus {
+        color: $primary;
+        text-decoration: none;
+    }
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p,
+a, section, span, li {
+    @include transition(0.3s ease all);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+select,
+textarea {
+    border: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    background: #e7eef4;
+    padding: 16px 15px !important;
+    @include transition(all 0.5s ease);
+
+    &:hover, &:focus {
+        outline: 1px solid $primary;
+    }
+}
+input[type="submit"] {
+    border: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    overflow: hidden;
+    line-height: 24px;
+    border-radius: 50px;
+    background: #2b542c;
+    padding: 24px 15px;
+    width: 273px !important;
+    text-transform: uppercase;
+    @include letter-spacing(75, 18);
+    @include transition(all 0.5s ease);
+
+    &:hover, &:focus {
+        outline: 0;
+        background: $primary;
+    }
+}

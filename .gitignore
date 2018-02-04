@@ -1,0 +1,17 @@
+# Application
+
+# Composer
+/vendor/*
+!vendor/.gitkeep
+
+# Node
+node_modules
+
+# Kate
+*.kate-swp
+.kdev4/
+*.kdev4
+
+#phpstorm
+.idea
+.idea/*

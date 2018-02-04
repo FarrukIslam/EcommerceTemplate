@@ -1,0 +1,88 @@
+section {
+    padding: 60px 0;
+}
+@for $i from 1 through 10{
+    .pt-#{$i}{
+        padding-top: #{$i}0px;
+    }
+}
+@for $i from 1 through 10{
+    .pb-#{$i}{
+        padding-bottom: #{$i}0px;
+    }
+}
+@for $i from 1 through 10{
+    .mt-#{$i}{
+        margin-top: #{$i}0px;
+    }
+}
+@for $i from 1 through 10{
+    .mb-#{$i}{
+        margin-bottom: #{$i}0px;
+    }
+}
+
+.cover-bg {
+    @include cover-bg;
+}
+.mx-auto {
+    margin: 0 auto;
+}
+.overlay{
+    @include overlay($primary, 0.5);
+}
+.btn {
+    border: 0;
+    z-index: 1;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    overflow: hidden;
+    line-height: 24px;
+    position: relative;
+    border-radius: 50px;
+    background: $primary;
+    display: inline-block;
+    @include letter-spacing(75, 18);
+    @include transition(all 0.5s ease);
+
+    &:before {
+        top: 0;
+        content: "";
+        left: -200%;
+        z-index: -1;
+        width: 400px;
+        height: 150px;
+        position: absolute;
+        border-radius: 100px;
+      //  background: $secondary;
+        @include transition(all 0.5s ease);
+    }
+
+    &:hover, &:focus {
+        //color: $white;
+
+        &:before {
+            top: -30px;
+            left: -30px;
+        }
+    }
+
+    &.btn-dark {
+    //    background: $secondary;
+
+        &:before {
+      //      background: $base;
+        }
+    }
+
+    &.btn-lg {
+        width: 360px;
+        padding: 33px 15px;
+    }
+
+    &.btn-sm {
+        width: 273px;
+        padding: 24px 15px;
+    }
+}
