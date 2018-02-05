@@ -22,6 +22,9 @@ section {
     }
 }
 
+/* col no padding*/
+
+
 .cover-bg {
     @include cover-bg;
 }
@@ -33,34 +36,19 @@ section {
 }
 .btn {
     border: 0;
-    z-index: 1;
     color: #fff;
-    font-size: 18px;
+    background: #ddd;
+    padding: 10px 20px;
+    border-radius: 0;
     font-weight: 700;
-    overflow: hidden;
     line-height: 24px;
-    position: relative;
-    border-radius: 50px;
-    background: $primary;
     display: inline-block;
     @include letter-spacing(75, 18);
     @include transition(all 0.5s ease);
 
-    &:before {
-        top: 0;
-        content: "";
-        left: -200%;
-        z-index: -1;
-        width: 400px;
-        height: 150px;
-        position: absolute;
-        border-radius: 100px;
-      //  background: $secondary;
-        @include transition(all 0.5s ease);
-    }
 
     &:hover, &:focus {
-        //color: $white;
+        color: $primary;
 
         &:before {
             top: -30px;
@@ -84,5 +72,41 @@ section {
     &.btn-sm {
         width: 273px;
         padding: 24px 15px;
+    }
+    &.btn-border{
+        color: #fff;
+        background: transparent;
+        border: 2px solid #fff;
+        padding: 10px 20px;
+        border-radius: 0;
+        &:hover{
+            background: $primary;
+            border: 2px solid $primary;
+            color: #fff;
+        }
+    }
+}
+
+/* logo design */
+.logo{
+    a{
+        h1{
+            font-family: $secondary-heading-font;
+            color: #202020;
+            font-size: convert(22, pts, rem);
+            border-right: 1px solid #ddd;
+            padding-right: 20px;
+            font-weight: 600;
+            position: relative;
+            letter-spacing: 2px;
+            &:before{
+                @include absolute(46%,0, 0, 24.5%);
+                content: "";
+                transform: rotate(-45deg);
+                width: 30px;
+                height: 2px;
+                background-color: #202020;
+            }
+        }
     }
 }

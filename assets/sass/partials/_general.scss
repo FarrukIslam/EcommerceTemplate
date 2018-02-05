@@ -22,7 +22,7 @@ table {
 html {
     margin: 0;
     padding: 0;
-    overflow-y: scroll;
+   // overflow-y: scroll;
     font-size: 16px;
     @media (max-width: 768px) {
         font-size: 14px;
@@ -30,18 +30,19 @@ html {
 }
 body {
     margin: 0;
-    overflow-x: hidden;
     color: $body-color;
-    text-rendering: optimizeLegibility;
+    font-family: $body-font;
+  //  text-rendering: optimizeLegibility;
+    font-weight: 400;
     font-size: convert(12, pts, rem);
 }
 h1 { font-size: convert(32, pts, rem); }
 h2 { font-size: convert(15, pts, rem); }
-h3 { font-size: 18px;  }
+h3 { font-size: convert(13, pts, rem); }
 
-p {
-    margin: 0 0 30px;
-}
+//p {
+//    margin: 0 0 15px;
+//}
 a {
     text-decoration: none;
     color: $body-color;
@@ -55,11 +56,6 @@ ul {
     padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p,
-a, section, span, li {
-    @include transition(0.3s ease all);
-}
-
 input[type="text"],
 input[type="number"],
 input[type="email"],
@@ -69,13 +65,12 @@ select,
 textarea {
     border: 0 !important;
     margin: 0 !important;
-    width: 100% !important;
     background: #e7eef4;
-    padding: 16px 15px !important;
+    padding: 16px 15px;
     @include transition(all 0.5s ease);
 
     &:hover, &:focus {
-        outline: 1px solid $primary;
+     //   outline: 1px solid $primary;
     }
 }
 input[type="submit"] {
