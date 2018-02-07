@@ -32,7 +32,7 @@ body {
     margin: 0;
     color: $body-color;
     font-family: $body-font;
-  //  text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
     font-weight: 400;
     font-size: convert(12, pts, rem);
 }

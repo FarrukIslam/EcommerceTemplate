@@ -1,0 +1,107 @@
+#footer{
+    .footer-main{
+        padding: 60px 10px;
+        background-image: url(../../dist/img/footer-bg.png);
+        @include cover-bg;
+        @media(max-width: 992px){
+            padding: 20px 5px;
+          div[class*='col']{
+              text-align: center;
+          }
+        }
+        .footer-item{
+            .logo{
+                h1{
+                    color: #fff;
+                    border-right: none;
+                }
+                margin: 20px 0;
+            }
+            p{
+                font-family: $body-font;
+                color: #707070;
+                font-size: convert(12,pts,rem);
+                line-height: convert(25,pts,rem);
+
+            }
+            .social-media{
+                margin-top: 20px;
+                ul{
+                    li{
+                        margin-right: 4px;
+                        a{
+                            svg,i{
+                                margin-right: 5px;
+                            }
+                        }
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+            @media(max-width: 768px){
+                margin-bottom: 15px;
+                border-bottom: 1px solid #707070;
+                padding-bottom: 20px;
+            }
+        }
+        .quick-link, .business-info{
+            h3{
+                color: #fff;
+                margin-bottom: 20px;
+            }
+            ul{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                li{
+                    padding: 8px 0;
+                    a{
+                        font-family: $body-font;
+                    }
+                    &.active{
+                        a{
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+
+        }
+        @media(max-width: 768px){
+            .quick-link{
+                margin-bottom: 20px;
+            }
+        }
+        .business-info{
+            h2{
+                font-family: $primary-heading-font;
+                font-weight: 600;
+                font-size: convert(13,pts,rem);
+                color: #fff;
+                margin-bottom: 20px;
+            }
+            ul.list-inline{
+                margin-top: 20px;
+            }
+            @media(max-width: 768px){
+                border-top: 1px solid #707070;
+                padding-top: 20px;
+            }
+        }
+        @media only screen and (max-width: 992px) and (min-width: 768px) {
+            .clearfix{
+                clear: both;
+            }
+            .sm-d-margin{
+                margin-top: 30px;
+            }
+        }
+    }
+    .footer-copy{
+        background-color: #242424;
+        padding: 20px 0;
+
+    }
+}

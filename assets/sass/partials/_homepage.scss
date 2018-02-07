@@ -1,11 +1,16 @@
 #slider{
     .container{
         .row{
-            @for $i from 1 through 12{
-                div[class*="col-sm-#{$i}"]{
-                    padding: 0 -15px;
-                }
-            }
+           @media(max-width: 768px){
+               div[class*='col']{
+                   padding: 10px 15px;
+               }
+               .row{
+                   div[class*='col']{
+                       padding: 10px 15px;
+                   }
+               }
+           }
         }
     }
 
@@ -13,8 +18,8 @@
         .slider-item{
             background: url(../../../dist/img/slider-img.jpg);
             @include cover-bg;
-            @include align-center('vertical');
-            height: 400px;
+            @include align-center('all');
+            height: 505px;
             background: #f5f5f5;
             .slider-content{
                 width: 100%;
@@ -28,7 +33,13 @@
                     font-size: convert(32,pts,rem);
                     font-family: $primary-heading-font;
                     color: #202020;
+                    margin: 25px 0;
                 }
+                .separetor{
+                   @include separetor(10%,2px,#f1f1f1,right);
+                    margin: 10px 0;
+                }
+
             }
         }
     }
@@ -52,10 +63,208 @@
             .btn-border{
                 font-family: $primary-heading-font;
                 font-weight: lighter;
+                border: 2px solid #e2e2e2;
 
             }
         }
 
     }
+    .promotion-sm{
+        background: #f5f5f5;
+        height: 200px;
+        @include align-center('bottom');
+        .promotion-sm-content{
+            background: #fbfbfb;
+            padding: 15px;
+            margin-bottom: 25px;
+           h3{
+               font-family: $body-font;
+               font-weight: 600;
+               font-size: convert(13,pts,rem);
+               color: #1a1a1a;
+               line-height: 27px;
+               @media only screen and (max-width: 992px) and (min-width: 768px){
+                   font-size: convert(11,pts,rem);
+               }
+           }
+           p{
+                font-size: convert(11,pts,rem);
+               font-style: italic;
+               font-weight: 400;
+               font-family: $primary-heading-font;
 
+           }
+            .separetor{
+                @include separetor(20%, 2px, $primary,none);
+                margin: 6% auto;
+            }
+
+        }
+    }
+
+}
+
+#support{
+    .support-item{
+        border: 2px solid #eee;
+        padding: 25px 15px;
+        overflow: hidden;
+        .icon{
+            margin-right: 5%;
+            width: 20%;
+            img{
+                width: 60px;
+                margin-top: 20px;
+            }
+        }
+        .icon-text{
+            width: 75%;
+            h3{
+                font-size: convert(12,pts,rem);
+                font-family: $primary-heading-font;
+                font-weight: 600;
+                text-transform: capitalize;
+                color: #202020;
+                line-height: 30px;
+            }
+            p{
+                font-size: convert(12,pts,rem);
+                font-family: $body-font;
+            }
+        }
+        &:hover, &.active{
+            background: $primary;
+            color: #fff;
+            border: 2px solid $primary;
+            h3{
+                color: #fff;
+            }
+        }
+    }
+}
+#ad-section{
+    .ad-img{
+        background: #a4a4a4;
+        height: 358px;
+        width: 100%;
+    }
+    .ad-text{
+        background: #f8f8f8;
+        padding: 80px 25px 65px;
+        color: #1a1a1a;
+        border: 5px solid #f0f0f0;
+        h2{
+            text-transform: uppercase;
+            font-size: convert(15,pts,rem);
+            color: #1a1a1a;
+            line-height:convert(30,pts,rem);
+            font-weight: 600;
+        }
+        p{
+            line-height:convert(20,pts,rem);
+        }
+    }
+}
+
+#popular-items{
+    .popular-item{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        .product-img{
+            img{
+                max-width: 100px;
+            }
+        }
+        .product-desc{
+            h4{
+                font-size: convert(10,pts,rem);
+                font-weight: 600;
+                color: #292929;
+                line-height: 26px;
+                font-family: $secondary-heading-font;
+            }
+            p {
+                margin-top: 8px;
+                margin-bottom: 8px;
+                span.current-price {
+                    color: $primary;
+                }
+            }
+            .btn-border{
+                border: 1px solid #ddd;
+                font-weight: lighter;
+                padding: 4px 10px;
+                font-family: $primary-heading-font;
+                font-size: convert(9,pts,rem);
+                color: #1a1a1a;
+                &:hover{
+                    border-color: $primary;
+                }
+            }
+        }
+    }
+}
+
+#testimonial{
+    .testimonial-item{
+        img{
+            margin-bottom: 25px;
+        }
+        h3{
+            color: #292929;
+            font-size: convert(13,pts,rem);
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-family: $secondary-heading-font;
+        }
+        h5{
+            color: #878787;
+            font-family: $secondary-heading-font;
+            font-weight: 400;
+            font-size: convert(12,pts,rem);
+            margin-bottom: 10px;
+        }
+        .separetor{
+            @include separetor(10%,2px,$primary,center);
+            float: none;
+            margin: 25px auto;
+        }
+
+        p{
+            font-family: $body-font;
+            font-style: italic;
+            font-size: convert(11,pts,rem);
+            color: #454545;
+            line-height: 2.0rem;
+            font-weight: 300;
+        }
+    }
+}
+
+#brand{
+    .our-brands{
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        border: 1px solid #eee;
+        padding: 40px 30px;
+        .brand-item{
+            display: inline-block;
+            width: 20%;
+            margin-left: -4px;
+            text-align: center;
+            @media(max-width:992px ){
+                width: 33.33%;
+                margin-bottom: 25px;
+            }
+            @media(max-width:768px ){
+                width: 50.00%;
+                margin-bottom: 25px;
+            }
+            @media(max-width:480px ){
+                width: 100%;
+                margin-bottom: 25px;
+            }
+        }
+    }
 }

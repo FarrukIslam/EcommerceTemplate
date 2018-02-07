@@ -149,6 +149,7 @@
                     background-color: #f8f8f8;
                     padding: 10px 25px;
                     width: 100%;
+                    border: 1px solid #ddd;
 
                     @include placeholder(#989898, convert(10, pts, rem), 400,$body-font,italic);
                     &:focus{

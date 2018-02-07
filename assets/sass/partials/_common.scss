@@ -1,5 +1,5 @@
 section {
-    padding: 60px 0;
+    padding: 50px 0;
 }
 @for $i from 1 through 10{
     .pt-#{$i}{
@@ -19,6 +19,39 @@ section {
 @for $i from 1 through 10{
     .mb-#{$i}{
         margin-bottom: #{$i}0px;
+    }
+}
+
+@for $i from 1 through 10{
+    .mts-#{$i}{
+        margin-top: #{$i}px;
+    }
+}
+@for $i from 1 through 10{
+    .ml-#{$i}{
+        margin-left: #{$i}0px;
+    }
+}
+
+@for $i from 1 through 10{
+    .mr-#{$i}{
+        margin-right: #{$i}0px;
+    }
+}
+@for $i from 1 through 10{
+    .mbs-#{$i}{
+        margin-bottom: #{$i}px;
+    }
+}
+
+@for $i from 1 through 120{
+    .pl-#{$i}{
+        padding-left: #{$i}px;
+    }
+}
+@for $i from 1 through 120{
+    .pr-#{$i}{
+        padding-right: #{$i}px;
     }
 }
 
@@ -45,8 +78,6 @@ section {
     display: inline-block;
     @include letter-spacing(75, 18);
     @include transition(all 0.5s ease);
-
-
     &:hover, &:focus {
         color: $primary;
 
@@ -85,6 +116,13 @@ section {
             color: #fff;
         }
     }
+    &.btn-primary{
+        background: $primary;
+        padding: 10px 30px;
+        &:hover{
+            color: #fff;
+        }
+    }
 }
 
 /* logo design */
@@ -108,5 +146,15 @@ section {
                 background-color: #202020;
             }
         }
+    }
+}
+
+.small-heading-title{
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    h2{
+        font-family: $secondary-heading-font;
+        font-size: convert(14,pts,rem);
+        color: #292929;
     }
 }

@@ -58,6 +58,13 @@
     left: $left;
 }
 
+@mixin separetor($width,$height,$bg,$align){
+    width: $width;
+    background: $bg;
+    height: $height;
+    float: $align;
+}
+
 //@function calculateRem($size) {
 //    $rem-size: $size / 16px;
 //    @return $rem-size * 1rem;
