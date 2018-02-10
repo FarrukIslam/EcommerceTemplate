@@ -1,4 +1,5 @@
 #header{
+     margin-bottom: 75px;
     .header-top{
         background-color: #202020;
         padding: 5px 0;
@@ -63,6 +64,7 @@
                             text-align: center;
                             @include border-radius(50px);
                         }
+
                     }
                     &.dropdown > ul.dropdown-menu{
                         padding: 0;
@@ -144,13 +146,12 @@
         .search{
             .search-form{
                 border: 1px solid #ddd;
+                margin-left: 1px;
 
                 .header-search[type="text"]{
                     background-color: #f8f8f8;
-                    padding: 10px 25px;
-                    width: 100%;
-                    border: 1px solid #ddd;
-
+                    padding: 10px;
+                    width: 78%;
                     @include placeholder(#989898, convert(10, pts, rem), 400,$body-font,italic);
                     &:focus{
                         outline: none;
@@ -161,7 +162,8 @@
                     background-color: #fff;
                     @include border-radius(0);
                     border-left: 1px solid #ddd;
-                    padding: 8px 27px;
+                    padding: 9px 25px;
+                    width: 20%;
                     &:focus{
                         outline: none;
                     }
@@ -174,6 +176,9 @@
             border: 1px solid #f0f0f0;
             background-color: #fff;
             @include border-radius(0);
+            position: absolute;
+            width: 95%;
+            z-index: 1;
 
                 @media(max-width: 768px){
                     .navbar-header{
@@ -222,6 +227,8 @@
                                 border-right: 0;
                             }
                             &.active{
+
+                                background-color: transparent;
                                 color: #202020;
                                 font-weight: 500;
                                 position: relative;
@@ -235,18 +242,24 @@
                                     @media only screen and (max-width: 992px) and (min-width: 768px){
                                         left: 12%;
                                     }
+                                    @media(max-width: 768px){
+                                        display: none;
+                                    }
                                 }
                                 &:focus, &:visited{
                                     background-color: transparent;
                                 }
                             }
                         }
+
                     }
+
                 }
         }
 
     }
 }
 
-
-
+.navbar-default .navbar-nav > .active > a{
+    background-color: transparent;
+}

@@ -203,6 +203,11 @@
             }
         }
     }
+    @media(max-width: 520px){
+        .col{
+            width: 100%;
+        }
+    }
 }
 
 #testimonial{
